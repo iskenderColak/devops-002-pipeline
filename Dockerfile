@@ -6,7 +6,7 @@ FROM openjdk:17
 ARG JAR_FILE=target/*.jar
 
 #  Projenin Jar halini Docker'ın içine şu isimle kopayala
-COPY ${JAR_FILE} devops-hello-app.jar
+COPY ${JAR_FILE} my-application.jar
 
 # terminalden çalıştırmak istediğin komutları CMD ile kullaniyorsunuz.
 CMD apt-get update
@@ -16,4 +16,4 @@ CMD apt-get upgrade -y
 EXPOSE 8080
 
 # Uygulamanın çalışacağı komut
-ENTRYPOINT ["java","-jar","devops-hello-app.jar"]
+ENTRYPOINT ["java","-jar","my-application.jar"]
